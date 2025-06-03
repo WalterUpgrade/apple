@@ -46,22 +46,31 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-10 md:mt-20 mb-14">
-          <div className="relative h-full flex-center">
-            <div className="overflow-hidden">
-              <img 
-                src={frameImg}
-                alt="frame"
-                className="bg-transparent relative z-10"
-              />
-            </div>
-            <div className="hiw-video">
-                <video className="pointer-events-none" playsInline preload="none" muted autoPlay ref={videoRef}>
-                  <source src={frameVideo} type="video/mp4" />
-                </video>
-              </div>
-          </div>
-          <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
-          </div>
+  <div className="relative flex-center" style={{ width: 320, height: 570 }}>
+    {/* El marco del celular */}
+    <img 
+      src={frameImg}
+      alt="frame"
+      className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none object-fill"
+    />
+    {/* El video dentro del marco */}
+    <div className="absolute h-[98%] w-[96%] overflow-hidden flex items-center">
+      <video
+        className=" object-fill rounded-[35px] pointer-events-none"
+        playsInline
+        preload="none"
+        muted
+        autoPlay
+        loop
+        ref={videoRef}
+        style={{ aspectRatio: "9/16" }}
+      >
+        <source src={frameVideo} type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
+</div>
 
           <div className="hiw-text-container">
                 <div className="flex flex-1 justify-center flex-col">

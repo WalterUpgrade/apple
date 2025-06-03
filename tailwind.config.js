@@ -13,6 +13,9 @@ export default {
         },
         zinc: "#101010",
       },
+      rotate: {
+        '270': '270deg',
+      },
     },
   },
   plugins: [],
